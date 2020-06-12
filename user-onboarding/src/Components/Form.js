@@ -31,6 +31,8 @@ function Form() {
     terms: ""
   });
 
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
   return (
     // Name
     // Email
@@ -77,7 +79,7 @@ function Form() {
         />
         Terms of Service
       </label>
-      <button>
+      <button disabled={buttonDisabled}>
         Submit
       </button>
     </form>
