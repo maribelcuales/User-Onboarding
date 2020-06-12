@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import * as yup from "yup";
 
 const formSchema = yup.object().shape({
@@ -32,6 +32,12 @@ function Form() {
   });
 
   const [buttonDisabled, setButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    formSchema.isValid(formState).then(valid => {
+      setButtonDisabled(!valid);
+    });
+  }, [formState]);
 
   return (
     // Name
