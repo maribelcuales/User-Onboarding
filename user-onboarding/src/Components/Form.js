@@ -54,6 +54,9 @@ function Form() {
         />
         Terms of Service
       </label>
+      <button>
+        Submit
+      </button>
     </form>
     
   )
