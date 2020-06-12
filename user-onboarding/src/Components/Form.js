@@ -7,7 +7,7 @@ function Form() {
     password: "",
     terms: ""
   })
-  
+
   return (
     // Name
     // Email
@@ -22,6 +22,17 @@ function Form() {
           type="text"
           name="name"
           value={formState.name}
+          onChange={inputChange}
+        />
+      </label>
+      <label htmlFor="email">
+        Email
+        <input
+          id="email"
+          type="text"
+          name="email"
+          value={formState.email}
+          onChange={inputChange}
         />
       </label>
     </form>
