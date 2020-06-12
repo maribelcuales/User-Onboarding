@@ -22,7 +22,14 @@ function Form() {
     email: "",
     password: "",
     terms: ""
-  })
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    password: "",
+    terms: ""
+  });
 
   return (
     // Name
