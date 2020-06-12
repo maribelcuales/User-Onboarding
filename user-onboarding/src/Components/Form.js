@@ -1,4 +1,20 @@
 import React, {useState} from "react";
+import * as yup from "yup";
+
+const formSchema = yup.object().shape({
+  name: yup.string().required("name is a required field"),
+  email: yup
+    .string()
+    .email()
+    .required("must include an email"),
+  password: yup
+    .string()
+    .min(6)
+    .required("password must be at least 6 characters"),
+  terms: yup
+    .boolean()
+    .oneOf([true], "please agree to the Terms of Service")
+});
 
 function Form() {
   const [formState, setFormState] = useState({
