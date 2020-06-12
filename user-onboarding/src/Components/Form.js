@@ -33,6 +33,8 @@ function Form() {
 
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
+  const [post, setPost] = useState([]);
+
   useEffect(() => {
     formSchema.isValid(formState).then(valid => {
       setButtonDisabled(!valid);
