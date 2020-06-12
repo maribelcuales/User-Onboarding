@@ -70,11 +70,6 @@ function Form() {
   };
 
   return (
-    // Name
-    // Email
-    // Password
-    // Terms of Service (checkbox)
-    // A Submit button to send our form data to the server
     <form>
       <label htmlFor="name">
         Name
@@ -85,6 +80,7 @@ function Form() {
           value={formState.name}
           onChange={inputChange}
         />
+        {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
       </label>
       <label htmlFor="email">
         Email
@@ -95,6 +91,7 @@ function Form() {
           value={formState.email}
           onChange={inputChange}
         />
+        {errors.email.length > 0 ? (<p className="error">{errors.email}</p>) : null}
       </label>
       <label htmlFor="password">
         Password
@@ -105,6 +102,7 @@ function Form() {
           value={formState.password}
           onChange={inputChange}
         />
+        {errors.password.length > 6 ? (<p className="error">{errors.password}</p>) : null}
       </label>
       <label htmlFor="terms" className="terms">
         <input
