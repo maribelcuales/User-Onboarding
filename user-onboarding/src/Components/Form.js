@@ -45,6 +45,15 @@ function Form() {
           onChange={inputChange}
         />
       </label>
+      <label htmlFor="terms" className="terms">
+        <input
+          type="checkbox"
+          name="terms"
+          checked={formState.terms}
+          onChange={inputChange}
+        />
+        Terms of Service
+      </label>
     </form>
     
   )
