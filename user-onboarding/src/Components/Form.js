@@ -59,6 +59,26 @@ function Form() {
       });
   };
 
+  const formSubmit = e => {
+    e.preventDefault();
+    axios
+      .post("https://reqres.in/api/users", formState)
+      .then(res => {
+        setPost(res.data);
+        console.log("success", post);
+
+        setFormState({
+          name: "",
+          email: "",
+          password: "",
+          terms: ""
+        });
+      })
+      .catch(err => {
+        console.log(err.res);
+      });
+  };
+
   const inputChange = e => {
     e.persist();
     const newFormData = {
@@ -72,7 +92,7 @@ function Form() {
   };
 
   return (
-    <form>
+    <form onSubmit={formSubmit}>
       <label htmlFor="name">
         Name
         <input
