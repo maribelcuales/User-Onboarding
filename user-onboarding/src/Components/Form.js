@@ -57,6 +57,18 @@ function Form() {
       });
   };
 
+  const inputChange = e => {
+    e.persist();
+    const newFormData = {
+      ...formState,
+      [e.target.name]:
+        e.target.type === "checkbox" ? 
+        e.target.checked : e.target.value
+    };
+    validateChange(e);
+    setFormState(newFormData);
+  };
+
   return (
     // Name
     // Email
