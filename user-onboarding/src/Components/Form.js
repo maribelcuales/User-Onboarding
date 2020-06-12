@@ -35,6 +35,16 @@ function Form() {
           onChange={inputChange}
         />
       </label>
+      <label htmlFor="password">
+        Password
+        <input
+          id="password"
+          type="password"
+          name="password"
+          value={formState.password}
+          onChange={inputChange}
+        />
+      </label>
     </form>
     
   )
