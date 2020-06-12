@@ -17,7 +17,7 @@ const formSchema = yup.object().shape({
     .oneOf([true], "please agree to the Terms of Service")
 });
 
-function Form() {
+function Form(props) {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -74,6 +74,7 @@ function Form() {
 
   const formSubmit = e => {
     e.preventDefault();
+    props.addUser(formState);
     axios
       .post("https://reqres.in/api/users", formState)
       .then(res => {
@@ -141,8 +142,6 @@ function Form() {
           Submit
         </button>
       </form>
-
-      <h3>Users</h3>
       <pre>{JSON.stringify(post, null, 2)}</pre>
     </div>  
   )
