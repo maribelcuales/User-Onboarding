@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Form from './Components/Form';
+import FormComponent from './Components/FormComponent';
 import './App.css';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <h1>Form Sign Up</h1>
-      <Form addUser={addUser}/>
+      <FormComponent addUser={addUser}/>
       <div className="user-list">
         <h2>Users</h2>
         {users.map(user => (

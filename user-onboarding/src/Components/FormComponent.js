@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import * as yup from "yup";
 import axios from "axios";
 
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 const formSchema = yup.object().shape({
   name: yup.string().required("name is a required field"),
   email: yup
@@ -17,7 +19,7 @@ const formSchema = yup.object().shape({
     .oneOf([true], "please agree to the Terms of Service")
 });
 
-function Form(props) {
+function FormComponent(props) {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -95,7 +97,8 @@ function Form(props) {
 
   return (
     <div>
-      <form onSubmit={formSubmit}>
+      <Form onSubmit={formSubmit}>  
+      {/* <form onSubmit={formSubmit}> */}
         <label htmlFor="name">
           Name
           <input
@@ -141,10 +144,11 @@ function Form(props) {
         <button disabled={buttonDisabled}>
           Submit
         </button>
-      </form>
+      {/* </form> */}
+      </Form>
       <pre>{JSON.stringify(post, null, 2)}</pre>
     </div>  
   )
 };
 
-export default Form;
+export default FormComponent;
