@@ -1,16 +1,9 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: papayawhip;
   margin: auto;
-}
-
-h1 {
-  padding-top: 50px;
-  color: purple;
-}
-
-h2 {
-  color: violet;
-  padding-bottom: 100px;
+  padding: 50px;
 }
 
