@@ -22,15 +22,15 @@ function App() {
       <FormComponent addUser={addUser}/>
       <div className="user-list">
         <h2>List of Users</h2>
-        <div>
-          {users.map(user => (
-            <div key={user.id}>
-              <h3>{user.name}</h3>
-              <p>{user.email}</p>
-              <p>{user.password}</p>
-            </div>
-          ))}
-        </div>
+        {/* <div> */}
+        {users.map(user => (
+          <div key={user.id}>
+            <h3>{user.name}</h3>
+            <p>Email: {user.email}</p>
+            <p>Password: {user.password}</p>
+          </div>
+        ))}
+        {/* </div> */}
       </div>
     </div>
   );
