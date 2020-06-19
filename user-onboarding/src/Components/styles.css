@@ -1,5 +1,12 @@
 .div-container {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  margin-top: 50px; 
+  border: 2px solid plum;
+  border-radius: 10px;
+  box-shadow: 30px;
+  width: 50%;
+  height: auto;
+  padding: 40px;
+  margin: auto;
+  margin-bottom: 30px;
 };
