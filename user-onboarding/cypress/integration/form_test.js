@@ -15,5 +15,7 @@ describe("Testing User Sign Up Form", function() {
     cy.get('[type="checkbox"]')
       .check()
       .should("be.checked");
+    cy.get("Button")
+      .click();
   });
 });
