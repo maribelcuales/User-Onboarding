@@ -18,17 +18,19 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Form Sign Up</h1>
+      <h1>Users Sign Up Form</h1>
       <FormComponent addUser={addUser}/>
       <div className="user-list">
-        <h2>Users</h2>
-        {users.map(user => (
-          <div key={user.id}>
-            <h3>{user.name}</h3>
-            <p>{user.email}</p>
-            <p>{user.password}</p>
-          </div>
-        ))}
+        <h2>List of Users</h2>
+        <div>
+          {users.map(user => (
+            <div key={user.id}>
+              <h3>{user.name}</h3>
+              <p>{user.email}</p>
+              <p>{user.password}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
