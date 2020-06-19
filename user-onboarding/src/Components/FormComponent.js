@@ -134,10 +134,11 @@ function FormComponent(props) {
           </Col>
         </FormGroup>
 
-        <FormGroup>
-          <Label htmlFor="password">
+        <FormGroup row>
+          <Label htmlFor="password" sm={2}>
             Password
           </Label>
+          <Col sm={10}>
             <Input
               id="password"
               type="password"
@@ -147,10 +148,11 @@ function FormComponent(props) {
               onChange={inputChange}
             />
             {errors.password.length > 6 ? (<p className="error">{errors.password}</p>) : null}
+          </Col>
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor="terms" className="terms">
+          <Label htmlFor="terms" sm={2}>
             <Input
               type="checkbox"
               name="terms"
