@@ -6,5 +6,8 @@ describe("Testing User Sign Up Form", function() {
     cy.get('input[name="name"]')
       .type("Luke Skywalker")
       .should("have.value", "Luke Skywalker");
+    cy.get('input[name="email"]')
+      .type("email@email.com")
+      .should("have.value", "email@email.com");
   });
 });
