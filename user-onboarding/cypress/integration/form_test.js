@@ -1,5 +1,10 @@
 describe("Testing User Sign Up Form", function() {
-  it("Add test to visit localhost", function() {
+  beforeEach(function() {
     cy.visit("http://localhost:3000");
+  });
+  it("Add test to inputs and submit form", function() {
+    cy.get('input[name="name"]')
+      .type("Luke Skywalker")
+      .should("have.value", "Luke Skywalker");
   });
 });
