@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import * as yup from "yup";
 import axios from "axios";
 
-import { Container, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './styles.css';
 
 const formSchema = yup.object().shape({
@@ -97,7 +97,6 @@ function FormComponent(props) {
   };
 
   return (
-    <Container>
     <div className="div-container">
       <Form onSubmit={formSubmit}>  
         <FormGroup row>
@@ -174,7 +173,6 @@ function FormComponent(props) {
         </div>
       </Form>
     </div>
-    </Container>
   )
 };
 
