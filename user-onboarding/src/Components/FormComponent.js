@@ -3,6 +3,7 @@ import * as yup from "yup";
 import axios from "axios";
 
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import './styles.css';
 
 const formSchema = yup.object().shape({
   name: yup.string().required("name is a required field"),
@@ -96,54 +97,71 @@ function FormComponent(props) {
   };
 
   return (
-    <div>
+    <div className="div-container">
       <Form onSubmit={formSubmit}>  
       {/* <form onSubmit={formSubmit}> */}
-        <label htmlFor="name">
-          Name
-          <input
-            id="name"
-            type="text"
-            name="name"
-            value={formState.name}
-            onChange={inputChange}
-          />
-          {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
-        </label>
-        <label htmlFor="email">
-          Email
-          <input
-            id="email"
-            type="text"
-            name="email"
-            value={formState.email}
-            onChange={inputChange}
-          />
-          {errors.email.length > 0 ? (<p className="error">{errors.email}</p>) : null}
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-            id="password"
-            type="password"
-            name="password"
-            value={formState.password}
-            onChange={inputChange}
-          />
-          {errors.password.length > 6 ? (<p className="error">{errors.password}</p>) : null}
-        </label>
-        <label htmlFor="terms" className="terms">
-          <input
-            type="checkbox"
-            name="terms"
-            checked={formState.terms}
-            onChange={inputChange}
-          />
-          Terms of Service
-        </label>
-        <button disabled={buttonDisabled}>
+        <FormGroup row>
+          <Label className="form-label" htmlFor="name" sm={2}>  
+            Name
+          </Label>
+          <Col sm={10}>
+            <Input
+              id="name"
+              type="text"
+              name="name"
+              className="input-name"
+              value={formState.name}
+              onChange={inputChange}
+            />
+            {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Label htmlFor="email">
+            Email
+          </Label>
+            <Input
+              id="email"
+              type="text"
+              name="email"
+              className="input-name"
+              value={formState.email}
+              onChange={inputChange}
+            />
+            {errors.email.length > 0 ? (<p className="error">{errors.email}</p>) : null}
+        </FormGroup>
+
+        <FormGroup>
+          <Label htmlFor="password">
+            Password
+          </Label>
+            <Input
+              id="password"
+              type="password"
+              name="password"
+              className="input-name"
+              value={formState.password}
+              onChange={inputChange}
+            />
+            {errors.password.length > 6 ? (<p className="error">{errors.password}</p>) : null}
+        </FormGroup>
+
+        <FormGroup>
+          <Label htmlFor="terms" className="terms">
+            <Input
+              type="checkbox"
+              name="terms"
+              checked={formState.terms}
+              onChange={inputChange}
+            />
+            Terms of Service
+          </Label>
+        </FormGroup>
+
+        <Button color="primary" disabled={buttonDisabled}>
           Submit
-        </button>
+        </Button>
       {/* </form> */}
       </Form>
       <pre>{JSON.stringify(post, null, 2)}</pre>
