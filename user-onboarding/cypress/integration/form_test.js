@@ -12,5 +12,8 @@ describe("Testing User Sign Up Form", function() {
     cy.get('input[name="password"]')
       .type("123456")
       .should("have.value", "123456");
+    cy.get('[type="checkbox"]')
+      .check()
+      .should("be.checked");
   });
 });
