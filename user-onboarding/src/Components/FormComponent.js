@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import * as yup from "yup";
 import axios from "axios";
 
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Container, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './styles.css';
 
 const formSchema = yup.object().shape({
@@ -97,9 +97,9 @@ function FormComponent(props) {
   };
 
   return (
+    <Container>
     <div className="div-container">
       <Form onSubmit={formSubmit}>  
-      {/* <form onSubmit={formSubmit}> */}
         <FormGroup row>
           <Label className="form-label" htmlFor="name" sm={2}>  
             Name
@@ -151,8 +151,8 @@ function FormComponent(props) {
           </Col>
         </FormGroup>
 
-        <FormGroup>
-          <Label htmlFor="terms" sm={2}>
+        <FormGroup check className="checkbox">
+          <Label htmlFor="terms" check>
             <Input
               type="checkbox"
               name="terms"
@@ -163,13 +163,18 @@ function FormComponent(props) {
           </Label>
         </FormGroup>
 
-        <Button color="primary" disabled={buttonDisabled}>
-          Submit
-        </Button>
-      {/* </form> */}
+        <div className="button-div">
+          <Button color="primary" disabled={buttonDisabled}>
+            Submit
+          </Button>
+        </div>
+
+        <div>
+          <pre>{JSON.stringify(post, null, 2)}</pre>
+        </div>
       </Form>
-      <pre>{JSON.stringify(post, null, 2)}</pre>
-    </div>  
+    </div>
+    </Container>
   )
 };
 
