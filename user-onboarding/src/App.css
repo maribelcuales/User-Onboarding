@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  background-color: papayawhip;
+}
+
+h1 {
+  padding-top: 50px;
+  color: purple;
+}
+
+h2 {
+  color: violet;
+  padding-bottom: 100px;
 }
 
 
