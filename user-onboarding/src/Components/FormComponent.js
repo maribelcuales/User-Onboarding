@@ -117,10 +117,11 @@ function FormComponent(props) {
           </Col>
         </FormGroup>
 
-        <FormGroup>
-          <Label htmlFor="email">
+        <FormGroup row>
+          <Label htmlFor="email" sm={2}>
             Email
           </Label>
+          <Col sm={10}>
             <Input
               id="email"
               type="text"
@@ -130,6 +131,7 @@ function FormComponent(props) {
               onChange={inputChange}
             />
             {errors.email.length > 0 ? (<p className="error">{errors.email}</p>) : null}
+          </Col>
         </FormGroup>
 
         <FormGroup>
