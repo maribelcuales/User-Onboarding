@@ -1,6 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   background-color: papayawhip;
   margin: auto;
@@ -14,14 +15,16 @@ h1 {
 
 .user-list {
   height: auto;
+  background-color: thistle;
+  border-radius: 10px;
+  width: 50%;
+  align-self: center;
 }
 
 h2 {
   color: white;
   padding-top: 30px;
-  padding-bottom: 150px;
+  padding-bottom: 30px;
   width: 50%;
   margin: auto;
-  background-color: thistle;
-  border-radius: 10px;
 }
