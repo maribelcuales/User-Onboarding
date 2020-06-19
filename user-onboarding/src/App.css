@@ -7,3 +7,21 @@
   padding: 50px;
 }
 
+h1 {
+  padding-bottom: 30px;
+  color: purple;
+}
+
+.user-list {
+  height: auto;
+}
+
+h2 {
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 150px;
+  width: 50%;
+  margin: auto;
+  background-color: thistle;
+  border-radius: 10px;
+}
