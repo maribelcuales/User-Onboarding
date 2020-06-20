@@ -8,18 +8,19 @@ import './styles.css';
 const formSchema = yup.object().shape({
   name: yup
     .string()
-    .required("name is a required field"),
+    .required("Name is a required field"),
   email: yup
     .string()
     .email()
-    .required("must include an email"),
+    .required("Must include an email"),
   password: yup
     .string()
     .min(6)
-    .required("password must be at least 6 characters"),
+    .required("Password must be at least 6 characters"),
   terms: yup
     .boolean()
-    .oneOf([true], "please agree to the Terms of Service")
+    .oneOf([true], "Please agree to the Terms of Service")
+    .required("Please agree to the Terms of Service")
 });
 
 function FormComponent(props) {
