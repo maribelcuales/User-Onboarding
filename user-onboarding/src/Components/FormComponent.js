@@ -6,7 +6,9 @@ import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './styles.css';
 
 const formSchema = yup.object().shape({
-  name: yup.string().required("name is a required field"),
+  name: yup
+    .string()
+    .required("name is a required field"),
   email: yup
     .string()
     .email()
