@@ -20,10 +20,15 @@ describe("Testing User Sign Up Form", function() {
     cy.get('input[name="email"]')
       .type("email@email.com")
       .should("have.value", "email@email.com");
-      
+    
+    cy.get('input[name="password"]')
+      .type("1234")
+      .clear()
+      .should("be.empty")
     cy.get('input[name="password"]')
       .type("123456")
       .should("have.value", "123456");
+      
     cy.get('[type="checkbox"]')
       .check()
       .should("be.checked");
