@@ -11,9 +11,16 @@ describe("Testing User Sign Up Form", function() {
     cy.get('input[name="name"]')
       .type("Luke Skywalker")
       .should("have.value", "Luke Skywalker");
+    
+    cy.get('input[name="email"]')
+      .type("emailatemail.com")
+      .clear()
+      .invoke("val")
+      .should("be.empty")
     cy.get('input[name="email"]')
       .type("email@email.com")
       .should("have.value", "email@email.com");
+      
     cy.get('input[name="password"]')
       .type("123456")
       .should("have.value", "123456");
